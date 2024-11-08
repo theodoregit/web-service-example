@@ -29,14 +29,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "d", propOrder = {
+@XmlType(name = "t", propOrder = {
     "fullname",
     "unit",
     "salary",
     "supervisor",
     "position"
 })
-public class Details {
+public class MakeTxn {
 
     @XmlElement(required = true)
     protected String fullname;

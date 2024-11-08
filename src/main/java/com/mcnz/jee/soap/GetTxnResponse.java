@@ -25,8 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="department" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="txn" type="{http://soap.jee.mcnz.com/}txn"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,63 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name",
-    "department"
+    "txn"
 })
-@XmlRootElement(name = "getDetailsRequest")
-public class GetDetailsRequest {
+@XmlRootElement(name = "getTxnResponse")
+public class GetTxnResponse {
 
     @XmlElement(required = true)
-    protected String name;
-    @XmlElement(required = true)
-    protected String department;
+    protected Txn txn;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the txn property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Txn }
      *     
      */
-    public String getName() {
-        return name;
+    public Txn getTxn() {
+        return txn;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the txn property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Txn }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * Gets the value of the department property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDepartment() {
-        return department;
-    }
-
-    /**
-     * Sets the value of the department property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDepartment(String value) {
-        this.department = value;
+    public void setTxn(Txn value) {
+        this.txn = value;
     }
 
 }

@@ -17,6 +17,18 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element> 
+    
+    <xs:element name="getTxnRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dracct" type="xs:string"/>
+                <xs:element name="cracct" type="xs:string"/>
+                <xs:element name="amount" type="xs:double"/>
+                <xs:element name="date" type="xs:string"/>
+                <xs:element name="narrative" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element> 
 
     <xs:element name="getScoreResponse">
         <xs:complexType>
@@ -30,6 +42,14 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="details" type="tns:details"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getTxnResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="txn" type="tns:txn"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -51,6 +71,13 @@
             <xs:element name="salary" type="xs:int"/>
             <xs:element name="supervisor" type="xs:int"/>
             <xs:element name="position" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>    
+
+    <xs:complexType name="txn">
+        <xs:sequence>
+            <xs:element name="txnref" type="xs:string"/>
+            <xs:element name="date" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

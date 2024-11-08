@@ -11,22 +11,21 @@ package com.mcnz.jee.soap;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for txn complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType&gt;
+ * &lt;complexType name="txn"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="department" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="txnref" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,64 +35,63 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "name",
-    "department"
+@XmlType(name = "txn", propOrder = {
+    "txnref",
+    "date"
 })
-@XmlRootElement(name = "getDetailsRequest")
-public class GetDetailsRequest {
+public class Txn {
 
     @XmlElement(required = true)
-    protected String name;
+    protected String txnref;
     @XmlElement(required = true)
-    protected String department;
+    protected String date;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the txnref property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getTxnref() {
+        return txnref;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the txnref property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setTxnref(String value) {
+        this.txnref = value;
     }
 
     /**
-     * Gets the value of the department property.
+     * Gets the value of the date property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDepartment() {
-        return department;
+    public String getDate() {
+        return date;
     }
 
     /**
-     * Sets the value of the department property.
+     * Sets the value of the date property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDepartment(String value) {
-        this.department = value;
+    public void setDate(String value) {
+        this.date = value;
     }
 
 }

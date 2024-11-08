@@ -7,10 +7,13 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.teddy.jee.spring.GetDetailsRequest;
 import com.teddy.jee.spring.GetDetailsResponse;
+import com.teddy.jee.spring.GetTxnRequest;
+import com.teddy.jee.spring.GetTxnResponse;
 import com.teddy.jee.spring.GetScoreRequest;
 import com.teddy.jee.spring.GetScoreResponse;
 import com.teddy.jee.spring.Score;
 import com.teddy.jee.spring.Details;
+import com.teddy.jee.spring.Txn;
 
 
 @Endpoint
@@ -48,6 +51,21 @@ public class ScoreEndpoint {
 			
 		GetDetailsResponse response = new GetDetailsResponse();		
 		response.setDetails(details);
+		return response;
+	}
+	
+	@PayloadRoot(namespace = "http://soap.jee.mcnz.com/", localPart = "getTxnRequest")
+	@ResponsePayload
+	public GetTxnResponse getTxn(@RequestPayload GetTxnRequest request) {
+		System.out.println("txn endpoint");
+		Txn txn = new Txn();
+		
+		String date = request.getDate();
+		txn.setDate(date);
+		txn.setTxnRef("FT253696WWW");
+			
+		GetTxnResponse response = new GetTxnResponse();		
+		response.setTxn(txn);
 		return response;
 	}
 

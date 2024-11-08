@@ -29,66 +29,77 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "d", propOrder = {
-    "fullname",
-    "unit",
-    "salary",
-    "supervisor",
-    "position"
+@XmlType(name = "txn", propOrder = {
+    "dracct",
+    "cracct",
+    "amount",
+    "date",
+    "narrative",
+    "txnref"
 })
-public class Details {
+public class Txn {
 
     @XmlElement(required = true)
-    protected String fullname;
-    protected String unit;
-    protected Double salary;
-    protected String supervisor;
-    protected String position;
+    protected String dracct;
+    protected String cracct;
+    protected Double amount;
+    protected String date;
+    protected String narrative;
+    protected String txnref;
 
   
-    public String getFullname() {
-        return fullname;
+    public String getDrAcct() {
+        return dracct;
     }
 
   
-    public void setFullname(String value) {
-        this.fullname = value;
+    public void setDrAcct(String value) {
+        this.dracct = value;
     }
     
-    public String getUnit() {
-        return unit;
+    public String getCrAcct() {
+        return cracct;
     }
 
   
-    public void setUnit(String value) {
-        this.unit = value;
+    public void setCrAcct(String value) {
+        this.cracct = value;
     }
     
-    public Double getSalary() {
-        return salary;
+    public Double GetAmount() {
+        return amount;
     }
 
   
-    public void setSalary(Double value) {
-        this.salary = value;
+    public void setAmount(Double value) {
+        this.amount = value;
     }
     
-    public String getSupervisor() {
-        return supervisor;
+    public String getDate() {
+        return date;
     }
 
   
-    public void setSupervisor(String value) {
-        this.supervisor = value;
+    public void setDate(String value) {
+        this.date = value;
     }
     
-    public String getPosition() {
-        return position;
+    public String getNarrative() {
+        return narrative;
     }
 
   
-    public void setPosition(String value) {
-        this.position = value;
+    public void setNarrative(String value) {
+        this.narrative = value;
+    }
+    
+    public String getTxnRef() {
+        return txnref;
+    }
+
+  
+    public void setTxnRef(String value) {
+        this.txnref = value;
     }
     
     
